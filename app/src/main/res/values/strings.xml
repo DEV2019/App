@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">TicTacToe</string>
+    <string name="winner">Winner is: %1$s </string>
+    <string name="reset">Reset</string>
+    <string name="ok">OK</string>
+    <string name="player_one">Player One: X</string>
+    <string name="player_two">Player Two: O</string>
+
 </resources>
