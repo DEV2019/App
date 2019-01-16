@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         setContentView(R.layout.activity_main)
 
         presenter = MainActivityPresenterImpl(this)
-
+        reset.setOnClickListener { presenter.reset() }
     }
 
     fun onCellClicked(view: View) {
@@ -36,17 +36,20 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
     override fun showWinnerLabel(player: String) {
         winner_text.text = resources.getString(R.string.winner, player)
         winner_text.visibility = View.VISIBLE
+        presenter.updateCells()
     }
 
     override fun hideWinnerLabel() {
     }
 
     override fun disableCells(row: Int, col: Int) {
-
+        val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
+        cell.isEnabled = false
     }
 
     override fun enableCells(row: Int, col: Int) {
-
+        val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
+        cell.isEnabled = true
     }
 
 }

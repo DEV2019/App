@@ -19,10 +19,25 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
         }
     }
 
-    override fun updateCells() {
-
+    override fun reset() {
+        board.clear()
+        updateGridCells(true)
     }
 
-    override fun reset() {
+    override fun updateCells() {
+        updateGridCells(false)
+    }
+
+    private fun updateGridCells(isReset: Boolean) {
+        for (row in 0..2) {
+            for (column in 0..2) {
+                if (isReset) {
+                    view.setCellText(row, column, "")
+                    view.enableCells(row, column)
+                } else {
+                    view.disableCells(row, column)
+                }
+            }
+        }
     }
 }

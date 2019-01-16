@@ -100,4 +100,7 @@ class Board {
                 && cells[2][0]?.value === player))
     }
 
+    fun clear() {
+        start()
+    }
 }
