@@ -53,11 +53,13 @@ class Board {
     }
 
     private fun isValid(row: Int, col: Int) =
-        state != State.FINISHED && cells[row][col]?.value == null
+        state != State.FINISHED && isCorrectRowOrColumn(row, col) && cells[row][col]?.value == null
 
     private fun changePlayer() {
         currentPlayer = if (currentPlayer === Player.X) Player.O else Player.X
     }
+
+    private fun isCorrectRowOrColumn(row: Int, col: Int) = row in 0..2 && col in 0..2
 
     private enum class State { IN_PROGRESS, FINISHED }
 
