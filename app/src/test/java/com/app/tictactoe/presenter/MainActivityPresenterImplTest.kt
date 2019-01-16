@@ -33,4 +33,14 @@ class MainActivityPresenterImplTest {
 
         presenter.onCellClicked(row, col)
     }
+
+    @Test
+    fun onCellClicked_wrong_values() {
+        val row = 3
+        val col = 4
+
+        PowerMock.replayAll()
+
+        presenter.onCellClicked(row, col)
+    }
 }
