@@ -151,6 +151,9 @@ class MainActivityPresenterImplTest {
                 view.enableCells(row, column)
             }
         }
+
+        view.hideWinnerLabel()
+
         PowerMock.replayAll()
 
         presenter.reset()
