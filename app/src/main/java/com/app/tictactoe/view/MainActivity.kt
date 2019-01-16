@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
     }
 
     override fun showWinnerLabel(player: String) {
-
+        winner_text.text = resources.getString(R.string.winner, player)
+        winner_text.visibility = View.VISIBLE
     }
 
     override fun hideWinnerLabel() {
