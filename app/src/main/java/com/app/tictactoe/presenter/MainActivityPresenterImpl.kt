@@ -13,5 +13,9 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
         if (player != null) {
             view.setCellText(row, col, player.toString())
         }
+
+        if (board.winningPlayer != null) {
+            view.showWinnerLabel(player.toString())
+        }
     }
 }
