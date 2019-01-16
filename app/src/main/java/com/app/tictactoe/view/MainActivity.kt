@@ -32,4 +32,12 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
         cell.text = player
     }
+
+    override fun showWinnerLabel(player: String) {
+
+    }
+
+    override fun hideWinnerLabel() {
+    }
+
 }

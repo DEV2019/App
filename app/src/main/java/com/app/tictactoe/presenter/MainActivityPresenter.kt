@@ -8,5 +8,9 @@ interface MainActivityPresenter {
 
         fun setCellText(row: Int, col: Int, player: String)
 
+        fun showWinnerLabel(player: String)
+
+        fun hideWinnerLabel()
+
     }
 }
