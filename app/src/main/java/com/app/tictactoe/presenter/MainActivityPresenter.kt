@@ -20,5 +20,7 @@ interface MainActivityPresenter {
 
         fun enableCells(row: Int, col: Int)
 
+        fun setLabelDrawn()
+
     }
 }

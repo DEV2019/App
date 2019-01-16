@@ -118,7 +118,6 @@ class MainActivityPresenterImplTest {
         view.setCellText(0, 1, "X")
         view.setCellText(2, 2, "O")
 
-
         PowerMock.replayAll()
 
         presenter.onCellClicked(0, 0)
@@ -158,4 +157,33 @@ class MainActivityPresenterImplTest {
 
         presenter.reset()
     }
+
+    @Test
+    fun level_drawn() {
+
+        view.setCellText(0, 0, "X")
+        view.setCellText(0, 1, "O")
+        view.setCellText(1, 1, "X")
+        view.setCellText(2, 2, "O")
+        view.setCellText(2, 1, "X")
+        view.setCellText(2, 0, "O")
+        view.setCellText(0, 2, "X")
+        view.setCellText(1, 0, "O")
+        view.setCellText(1, 2, "X")
+        view.setLabelDrawn()
+
+        PowerMock.replayAll()
+
+        presenter.onCellClicked(0, 0)
+        presenter.onCellClicked(0, 1)
+        presenter.onCellClicked(1, 1)
+        presenter.onCellClicked(2, 2)
+        presenter.onCellClicked(2, 1)
+        presenter.onCellClicked(2, 0)
+        presenter.onCellClicked(0, 2)
+        presenter.onCellClicked(1, 0)
+        presenter.onCellClicked(1, 2)
+
+    }
+
 }

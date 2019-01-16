@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         presenter.updateCells()
     }
 
+    override fun setLabelDrawn() {
+    }
+
     /**
      * This method hides the winner label
      * Called after reset
