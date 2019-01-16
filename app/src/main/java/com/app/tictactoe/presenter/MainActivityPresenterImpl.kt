@@ -22,6 +22,7 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
     override fun reset() {
         board.clear()
         updateGridCells(true)
+        view.hideWinnerLabel()
     }
 
     override fun updateCells() {

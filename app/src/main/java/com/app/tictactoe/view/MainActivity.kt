@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
     }
 
     override fun hideWinnerLabel() {
+        winner_text.visibility = View.GONE
     }
 
     override fun disableCells(row: Int, col: Int) {
