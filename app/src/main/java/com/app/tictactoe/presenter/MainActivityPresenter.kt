@@ -14,7 +14,7 @@ interface MainActivityPresenter {
 
         fun showWinnerLabel(player: String)
 
-        fun hideWinnerLabel()
+        fun hideInfoLabel()
 
         fun disableCells(row: Int, col: Int)
 

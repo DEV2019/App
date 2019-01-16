@@ -5,6 +5,7 @@ class Board {
     private val cells = Array<Array<Cell?>>(3) { arrayOfNulls(3) }
     private var currentPlayer: Player? = null
     private var state: State? = null
+    var cellsClicked = 0 // This tracks the number of cells clicked
     var winningPlayer: Player? = null
 
     init {
@@ -18,6 +19,7 @@ class Board {
         clearCells()
         currentPlayer = Player.X
         winningPlayer = null
+        cellsClicked = 0
         state = State.IN_PROGRESS
     }
 
@@ -56,6 +58,7 @@ class Board {
             }
 
         }
+        cellsClicked += 1
 
         return player
     }

@@ -49,20 +49,26 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
      * @param player is the player(X or O) who won
      */
     override fun showWinnerLabel(player: String) {
-        winner_text.text = resources.getString(R.string.winner, player)
-        winner_text.visibility = View.VISIBLE
+        info_text.text = resources.getString(R.string.winner, player)
+        info_text.visibility = View.VISIBLE
         presenter.updateCells()
     }
 
+    /**
+     * This method sets the label for draw
+     */
     override fun setLabelDrawn() {
+        info_text.text = resources.getString(R.string.level_drawn)
+        info_text.visibility = View.VISIBLE
+        presenter.updateCells()
     }
 
     /**
      * This method hides the winner label
      * Called after reset
      */
-    override fun hideWinnerLabel() {
-        winner_text.visibility = View.GONE
+    override fun hideInfoLabel() {
+        info_text.visibility = View.GONE
     }
 
     /**

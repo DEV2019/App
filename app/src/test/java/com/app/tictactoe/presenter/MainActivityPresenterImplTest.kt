@@ -151,7 +151,7 @@ class MainActivityPresenterImplTest {
             }
         }
 
-        view.hideWinnerLabel()
+        view.hideInfoLabel()
 
         PowerMock.replayAll()
 

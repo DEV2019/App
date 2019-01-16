@@ -22,6 +22,8 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
 
         if (board.winningPlayer != null) {
             view.showWinnerLabel(player.toString())
+        } else if (board.cellsClicked == 9) {
+            view.setLabelDrawn()
         }
     }
 
@@ -31,7 +33,7 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
     override fun reset() {
         board.clear()
         updateGridCells(true)
-        view.hideWinnerLabel()
+        view.hideInfoLabel()
     }
 
     /**
