@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         reset.setOnClickListener { presenter.reset() }
     }
 
+    /**
+     * This onclick method retrieves
+     * row index and column index
+     * @param view
+     */
     fun onCellClicked(view: View) {
         presenter.onCellClicked(
             view.tag.toString().substring(0, 1).toInt(),
@@ -28,26 +33,52 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         )
     }
 
+    /**
+     * This method sets the player name on selected cell
+     * @param row
+     * @param col
+     * @param player
+     */
     override fun setCellText(row: Int, col: Int, player: String) {
         val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
         cell.text = player
     }
 
+    /**
+     * This method sets the winner label
+     * @param player is the player(X or O) who won
+     */
     override fun showWinnerLabel(player: String) {
         winner_text.text = resources.getString(R.string.winner, player)
         winner_text.visibility = View.VISIBLE
         presenter.updateCells()
     }
 
+    /**
+     * This method hides the winner label
+     * Called after reset
+     */
     override fun hideWinnerLabel() {
         winner_text.visibility = View.GONE
     }
 
+    /**
+     * This method disables cells
+     * Called after game is finishes
+     * @param row
+     * @param col
+     */
     override fun disableCells(row: Int, col: Int) {
         val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
         cell.isEnabled = false
     }
 
+    /**
+     * This method enables cells
+     * Called after game is finished
+     * @param row
+     * @param col
+     */
     override fun enableCells(row: Int, col: Int) {
         val cell: Button = grid_tictactoe.findViewWithTag("" + row + col)
         cell.isEnabled = true
