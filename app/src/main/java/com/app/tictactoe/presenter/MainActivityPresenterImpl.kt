@@ -18,4 +18,11 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
             view.showWinnerLabel(player.toString())
         }
     }
+
+    override fun updateCells() {
+
+    }
+
+    override fun reset() {
+    }
 }

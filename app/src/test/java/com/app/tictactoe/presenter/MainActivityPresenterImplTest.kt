@@ -129,4 +129,30 @@ class MainActivityPresenterImplTest {
         presenter.onCellClicked(2, 2)
 
     }
+
+    @Test
+    fun updateCells() {
+        for (row in 0..2) {
+            for (column in 0..2) {
+                view.disableCells(row, column)
+            }
+        }
+
+        PowerMock.replayAll()
+
+        presenter.updateCells()
+    }
+
+    @Test
+    fun reset() {
+        for (row in 0..2) {
+            for (column in 0..2) {
+                view.setCellText(row, column, "")
+                view.enableCells(row, column)
+            }
+        }
+        PowerMock.replayAll()
+
+        presenter.reset()
+    }
 }

@@ -41,4 +41,12 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
     override fun hideWinnerLabel() {
     }
 
+    override fun disableCells(row: Int, col: Int) {
+
+    }
+
+    override fun enableCells(row: Int, col: Int) {
+
+    }
+
 }
