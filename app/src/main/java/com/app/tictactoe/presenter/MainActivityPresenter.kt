@@ -1,4 +1,4 @@
-package com.app.app.presenter
+package com.app.tictactoe.presenter
 
 interface MainActivityPresenter {
 

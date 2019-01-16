@@ -1,4 +1,4 @@
-package com.app.app.presenter
+package com.app.tictactoe.presenter
 
 import org.junit.After
 import org.junit.Before
