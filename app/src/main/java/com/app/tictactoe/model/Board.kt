@@ -60,6 +60,14 @@ class Board {
         return player
     }
 
+    /**
+     * Checks validity in the game
+     * If state of game is not finished - it is valid
+     * If the index of cell in grid is correct - it is valid
+     * If the value of cell is null - it is valid
+     * @param row
+     * @param col
+     */
     private fun isValid(row: Int, col: Int) =
         state != State.FINISHED && isCorrectRowOrColumn(row, col) && cells[row][col]?.value == null
 
@@ -100,6 +108,9 @@ class Board {
                 && cells[2][0]?.value === player))
     }
 
+    /**
+     * Clears the board after game is over
+     */
     fun clear() {
         start()
     }

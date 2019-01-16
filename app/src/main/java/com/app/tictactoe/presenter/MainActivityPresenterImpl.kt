@@ -6,7 +6,13 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
 
     private val board by lazy { Board() }
 
-
+    /**
+     * Sets the text on the cell in grid touched
+     * The value of the text can be X or O
+     * If the player has won, sets the winning label
+     * @param row
+     * @param col
+     */
     override fun onCellClicked(row: Int, col: Int) {
         val player = board.setPlayer(row, col)
 
@@ -19,12 +25,18 @@ class MainActivityPresenterImpl(val view: MainActivityPresenter.View) : MainActi
         }
     }
 
+    /**
+     * Clear the board when the user taps on reset button
+     */
     override fun reset() {
         board.clear()
         updateGridCells(true)
         view.hideWinnerLabel()
     }
 
+    /**
+     * Disable the cells as son as the game is over
+     */
     override fun updateCells() {
         updateGridCells(false)
     }
