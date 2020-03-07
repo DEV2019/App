@@ -113,6 +113,7 @@ class Board {
 
     /**
      * Clears the board after game is over
+     * *
      */
     fun clear() {
         start()
